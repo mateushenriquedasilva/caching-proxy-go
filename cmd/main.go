@@ -9,6 +9,8 @@ func init() {
 	api.InitRedis()
 	r := gin.Default()
 
+	r.GET("/products", api.Middleware, api.GetProducts)
+
 	r.Run()
 }
 
